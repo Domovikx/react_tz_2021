@@ -75,7 +75,7 @@ module.exports = (env, argv) => {
     ],
 
     output: {
-      publicPath: './',
+      publicPath: '/',
       filename: `${fileNames}.js`,
       path: path.resolve(__dirname, 'dist'),
     },
