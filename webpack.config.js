@@ -1,8 +1,8 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-
 require('dotenv').config();
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = (env, argv) => {
@@ -85,6 +85,11 @@ module.exports = (env, argv) => {
         chunks: 'all',
       },
       minimize: true,
+      minimizer: [
+        new TerserPlugin({
+          parallel: true,
+        }),
+      ],
     },
   };
 };
