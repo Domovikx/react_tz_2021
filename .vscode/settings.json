@@ -2,9 +2,10 @@
   "cSpell.language": "en, ru",
   "editor.formatOnSave": true,
   "eslint.validate": [
+    "html",
     "javascript",
     "javascriptreact",
-    "html",
+    "typescript",
     "typescriptreact"
   ],
 
@@ -25,6 +26,12 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+
+  "eslint.alwaysShowStatus": true,
+  "eslint.format.enable": true,
+  "eslint.lintTask.enable": true,
+  "eslint.packageManager": "yarn",
+  "eslint.quiet": true,
 
   "cSpell.enabledLanguageIds": [
     "javascript",

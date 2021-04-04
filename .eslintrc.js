@@ -1,62 +1,49 @@
-/**
- * Source
- * https://www.robertcooper.me/using-eslint-and-prettier-in-a-typescript-project
- * https://thesoreon.com/blog/how-to-set-up-eslint-with-typescript-in-vs-code
- */
-
 module.exports = {
+  root: true,
   extends: [
     'eslint:recommended',
-    'plugin:import/errors',
-    'plugin:import/warnings',
-    'plugin:import/typescript',
-    'plugin:react/recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
+    'plugin:react/recommended',
     'prettier/@typescript-eslint',
   ],
-
-  ignorePatterns: ['.eslintrc.js', 'webpack.config.js'],
-
   parser: '@typescript-eslint/parser',
-
+  env: {
+    browser: true,
+    es6: true,
+    jest: true,
+  },
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
     ecmaVersion: 2020,
     sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+      arrowFunctions: true,
+    },
   },
-  plugins: ['sort-keys-fix'],
-  rules: {
-    'arrow-body-style': ['error', 'as-needed'],
-    'import/order': [
-      'error',
-      {
-        groups: [
-          'builtin',
-          'external',
-          'internal',
-          'parent',
-          'sibling',
-          'index',
-        ],
-        'newlines-between': 'always',
-        pathGroups: [
-          {
-            group: 'internal',
-            pattern: '~/**',
-          },
-        ],
-      },
-    ],
-    'react/display-name': 0,
-    'react/prop-types': ['off'],
-    'sort-keys-fix/sort-keys-fix': 'warn',
-  },
+  plugins: ['react', '@typescript-eslint', 'prettier'],
   settings: {
     react: {
       version: 'detect',
     },
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        paths: ['./src'],
+      },
+    },
+  },
+  rules: {
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
+    'class-methods-use-this': 'off',
+    'comma-dangle': 'off',
+    'function-paren-newline': 'off',
+    'global-require': 'off',
+    'import/extensions': 'off',
+    'import/no-dynamic-require': 'off',
+    'import/prefer-default-export': 'off',
+    'no-inner-declarations': 'off',
   },
 };
