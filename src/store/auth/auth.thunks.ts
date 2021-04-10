@@ -32,5 +32,3 @@ export const authLoginThunk = (user: { email: string; password: string }) => {
     }
   };
 };
-
-export function authLogoutThunk() {}
