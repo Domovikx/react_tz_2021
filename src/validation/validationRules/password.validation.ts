@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-export const passwordValidation = (minLength = 3): yup.StringSchema =>
+export const passwordValidation = (minLength: number): yup.StringSchema =>
   yup
     .string()
     .required('Введите ваш password')
