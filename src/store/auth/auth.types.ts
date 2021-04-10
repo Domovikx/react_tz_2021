@@ -1,5 +1,7 @@
 export interface AuthState {
   isAuth: boolean;
+  token: string;
+  email: string;
 }
 
 export enum AUTH {
@@ -8,15 +10,13 @@ export enum AUTH {
 }
 
 export interface AuthLoginPayload {
+  isAuth: boolean;
+  token: string;
   email: string;
-  password: string;
-}
-
-export interface AuthRegisterArgs {
-  payload: AuthLoginPayload;
-  type: AUTH;
 }
 
 export type AuthAction =
-  | { type: AUTH.LOGIN; payload: any }
-  | { type: AUTH.LOGOUT; payload: any };
+  | { type: AUTH.LOGIN; payload: AuthLoginPayload }
+  | { type: AUTH.LOGOUT };
+
+export type JSONResponse = { token?: string; message?: string };

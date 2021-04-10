@@ -1,5 +1,6 @@
 import * as React from 'react';
 import AdminLayout from './components/layouts/AdminLayout';
+import Authentication from './pages/Authentication';
 import AuthLayout from './components/layouts/AuthLayout';
 import Home from './pages/Home';
 import Loader from './components/common/Loader';
@@ -10,7 +11,6 @@ import { Locations } from './constants/locations';
 import { RootState } from './store/store.types';
 import { Suspense } from 'react';
 import { useSelector } from 'react-redux';
-import Authentication from './pages/Authentication';
 
 export const Routing = () => {
   const isAuth = useSelector((state: RootState) => state.auth.isAuth);

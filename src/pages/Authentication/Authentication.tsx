@@ -2,6 +2,7 @@ import ButtonGoBack from '../../components/common/ButtonGoBack';
 import CommonEndAdornment from '../../components/common/CommonEndAdornment';
 import FormikTextField from '../../components/common/FormikTextField';
 import React, { useState } from 'react';
+import { authLoginThunk } from '../../store/auth/auth.thunks';
 import { AuthRegisterValues, LocalState } from './Authentication.types';
 import { Avatar, Button, Container, Grid, Typography } from '@material-ui/core';
 import { fieldName } from '../../constants/fieldName';
@@ -37,7 +38,7 @@ export const Authentication = () => {
 
   const submitHandler = (formValues: AuthRegisterValues) => {
     console.log('submitHandler :>> ');
-    // dispatch(authLoginThunk(formValues));
+    dispatch(authLoginThunk(formValues));
   };
 
   const handleClickShowPassword = () => {
@@ -127,6 +128,7 @@ export const Authentication = () => {
                     </Grid>
                   </Grid>
                 </div>
+                <div>Данные для тестирования: admin@mail.ru / 123</div>
               </Container>
             </Form>
           );

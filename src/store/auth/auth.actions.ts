@@ -1,11 +1,15 @@
-import { AUTH } from './auth.types';
+import jwt_decode from 'jwt-decode';
+import { AUTH, AuthAction } from './auth.types';
 
-export const authLogoutAction = () => ({
-  payload: false,
+export const authLoginAction = (token: string): AuthAction => {
+  const decoded: { email: string } = jwt_decode(token);
+
+  return {
+    payload: { isAuth: true, token, email: decoded.email },
+    type: AUTH.LOGIN,
+  };
+};
+
+export const authLogoutAction = (): AuthAction => ({
   type: AUTH.LOGOUT,
-});
-
-export const authLoginAction = () => ({
-  payload: true,
-  type: AUTH.LOGIN,
 });
