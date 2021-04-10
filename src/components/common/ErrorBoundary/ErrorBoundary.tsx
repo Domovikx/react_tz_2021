@@ -16,7 +16,7 @@ export class ErrorBoundary extends React.Component {
     if (this.state.hasError) {
       return (
         <Grid container direction="column" justify="center" alignItems="center">
-          <h1>Что-то пошло не так. Произошла ошибка.</h1>
+          <h1>Что-то пошло не так. Произошла ошибка и всё пропало.</h1>
         </Grid>
       );
     }
