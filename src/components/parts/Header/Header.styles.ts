@@ -8,4 +8,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   loginButton: {
     marginLeft: 'auto',
   },
+  email: {
+    color: theme.palette.text.primary,
+  },
 }));
