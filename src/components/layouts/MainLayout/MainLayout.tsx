@@ -5,7 +5,7 @@ import { Box } from '@material-ui/core';
 import { Props } from './MainLayout.types';
 import { useStyles } from './MainLayout.styles';
 
-export const MainLayout = ({ children }: Props): JSX.Element => {
+export const MainLayout = ({ children }: Props) => {
   const classes = useStyles();
 
   return (

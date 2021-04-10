@@ -1,8 +1,15 @@
 import React from 'react';
-import useTheme from '@material-ui/core/styles/useTheme';
+import { AppBar, Button, Toolbar } from '@material-ui/core';
+import { useStyles } from './Header.styles';
 
-export const Header = (): JSX.Element => {
-  const theme = useTheme();
+export const Header = () => {
+  const classes = useStyles();
 
-  return <>Header</>;
+  return (
+    <AppBar className={classes.appBar}>
+      <Toolbar>
+        <Button className={classes.loginButton}>Login</Button>
+      </Toolbar>
+    </AppBar>
+  );
 };
