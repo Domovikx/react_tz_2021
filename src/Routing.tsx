@@ -1,7 +1,9 @@
 import * as React from 'react';
+import AddTask from './pages/AddTask';
 import AdminLayout from './components/layouts/AdminLayout';
 import Authentication from './pages/Authentication';
 import AuthLayout from './components/layouts/AuthLayout';
+import EditTask from './pages/EditTask';
 import Home from './pages/Home';
 import Loader from './components/common/Loader';
 import MainLayout from './components/layouts/MainLayout';
@@ -58,6 +60,9 @@ export const Routing = () => {
             <MainLayout>
               <Switch>
                 <Route path={Locations.HomePage} exact component={Home} />
+
+                <Route path={Locations.AddNewTask} component={AddTask} />
+                <Route path={Locations.EditTask_id} component={EditTask} />
 
                 <Route path={Locations.AllPages} component={PageNotFound} />
               </Switch>

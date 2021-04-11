@@ -5,7 +5,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     position: 'static',
     backgroundColor: theme.palette.primary.main,
   },
-  loginButton: {
+  button: {
     marginLeft: 'auto',
   },
   email: {

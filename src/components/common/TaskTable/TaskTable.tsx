@@ -9,7 +9,9 @@ import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import TableSortLabel from '@material-ui/core/TableSortLabel';
 import { Data, EnhancedTableProps, HeadCell, Order } from './TaskTable.types';
+import { Locations } from '../../../constants/locations';
 import { RootState } from '../../../store/root.reducer';
+import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import { useStyles } from './TaskTable.styles';
@@ -92,6 +94,8 @@ const EnhancedTableHead = (props: EnhancedTableProps) => {
 
 export const TaskTable = () => {
   const classes = useStyles();
+  const history = useHistory();
+
   const rows = useSelector((state: RootState) => state.tasks.tasks);
 
   const [order, setOrder] = useState<Order>('asc');
@@ -110,7 +114,7 @@ export const TaskTable = () => {
   };
 
   const handleClick = (event: React.MouseEvent<unknown>, id: string) => {
-    console.log('event :>> ', id);
+    history.push(Locations.EditTask + id);
   };
 
   const handleChangePage = (event: unknown, newPage: number) => {

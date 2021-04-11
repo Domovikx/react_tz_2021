@@ -29,21 +29,21 @@ export const Header = () => {
           </Typography>
         )}
 
+        <Button
+          className={classes.button}
+          component={Link}
+          to={Locations.AddNewTask}
+        >
+          Add
+        </Button>
+
         {!isAuth && (
-          <Button
-            className={classes.loginButton}
-            component={Link}
-            to={Locations.Auth_Authentication}
-          >
+          <Button component={Link} to={Locations.Auth_Authentication}>
             Login
           </Button>
         )}
 
-        {isAuth && (
-          <Button className={classes.loginButton} onClick={logout}>
-            Logout
-          </Button>
-        )}
+        {isAuth && <Button onClick={logout}>Logout</Button>}
       </Toolbar>
     </AppBar>
   );
