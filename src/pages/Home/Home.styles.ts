@@ -1,3 +1,7 @@
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, Theme } from '@material-ui/core';
 
-export const useStyles = makeStyles(() => ({}));
+export const useStyles = makeStyles((theme: Theme) => ({
+  container: {
+    padding: theme.spacing(2),
+  },
+}));

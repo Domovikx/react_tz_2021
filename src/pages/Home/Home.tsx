@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { Box } from '@material-ui/core';
+import TaskTable from '../../components/common/TaskTable';
+import { Box, Container } from '@material-ui/core';
 import { getAllTasksThunk } from '../../store/tasks/tasks.thunks';
+import { RootState } from '../../store/root.reducer';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useStyles } from './Home.styles';
-import { RootState } from '../../store/root.reducer';
 
 export const Home = () => {
   const classes = useStyles();
@@ -14,7 +15,11 @@ export const Home = () => {
 
   useEffect(() => {
     !tasks.length && dispatch(getAllTasksThunk());
-  }, [tasks]);
+  }, []);
 
-  return <Box>Home</Box>;
+  return (
+    <Container className={classes.container}>
+      <TaskTable />
+    </Container>
+  );
 };
