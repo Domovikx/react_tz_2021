@@ -6,6 +6,7 @@ import { Props } from './FormikTextField.types';
 
 export const FormikTextField = (props: Props) => {
   const { formikkey, type, label } = props;
+
   const [field, meta] = useField(formikkey);
 
   return (

@@ -15,7 +15,6 @@ export const EditTask = () => {
   const dispatch = useDispatch();
 
   const { id }: Params = useParams();
-  console.log('id :>> ', id);
 
   return (
     <Container className={classes.container}>

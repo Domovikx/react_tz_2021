@@ -1,17 +1,32 @@
 import { makeStyles, Theme } from '@material-ui/core';
 
 export const useStyles = makeStyles((theme: Theme) => ({
-  icon: {
-    height: '30px',
-    width: '30px',
+  form: {
+    width: '100%',
   },
-
-  iconButton: {
-    color: theme.palette.primary.main,
-    marginTop: theme.spacing(1),
-    marginRight: theme.spacing(2),
-    position: 'absolute',
-    right: 0,
-    zIndex: 100,
+  container: {
+    paddingTop: theme.spacing(8),
+  },
+  link: {
+    textTransform: 'initial',
+  },
+  paper: {
+    alignItems: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
+  },
+  successIcon: {
+    backgroundColor: theme.palette.success.light,
+    margin: theme.spacing(1),
+  },
+  typography: {
+    marginBottom: theme.spacing(3),
+  },
+  errorIcon: {
+    backgroundColor: theme.palette.error.main,
+    margin: theme.spacing(1),
   },
 }));

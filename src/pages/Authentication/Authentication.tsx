@@ -37,7 +37,6 @@ export const Authentication = () => {
   };
 
   const submitHandler = (formValues: AuthRegisterValues) => {
-    console.log('submitHandler :>> ');
     dispatch(authLoginThunk(formValues));
   };
 
@@ -48,6 +47,7 @@ export const Authentication = () => {
   return (
     <>
       <ButtonGoBack />
+
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
