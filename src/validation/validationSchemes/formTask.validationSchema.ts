@@ -7,6 +7,6 @@ import { usernameValidation } from '../validationRules/username.validation';
 export const validationSchema = yup.object({
   email: emailValidation,
   username: usernameValidation,
-  taskText: taskTextValidation,
+  text: taskTextValidation,
   status: statusValidation,
 });

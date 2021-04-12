@@ -4,7 +4,7 @@ export interface LocalState {
 
 export interface InitialValues {
   email: string;
-  status?: number;
+  status: number;
   text: string;
   username: string;
 }
