@@ -14,7 +14,7 @@ export const AddTask = () => {
       <ButtonGoBack />
 
       <Typography variant="h6" component="h2">
-        AddTask
+        Add new task
       </Typography>
 
       <FormTask />

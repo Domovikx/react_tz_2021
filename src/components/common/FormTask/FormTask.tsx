@@ -1,11 +1,11 @@
 import FormikTextField from '../FormikTextField';
-import React, { useState } from 'react';
-import { authLoginThunk } from '../../../store/auth/auth.thunks';
-import { InitialValues, LocalState } from './FormTask.types';
-import { Avatar, Button, Container, Grid, Typography } from '@material-ui/core';
+import React from 'react';
+import { Button, Container, Grid } from '@material-ui/core';
+import { createNewTaskThunk } from '../../../store/tasks/tasks.thunks';
 import { fieldName } from '../../../constants/fieldName';
 import { fieldType } from '../../../constants/fieldType';
 import { Form, Formik, FormikProps } from 'formik';
+import { InitialValues } from './FormTask.types';
 import { RootState } from '../../../store/store.types';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
@@ -19,10 +19,6 @@ export const FormTask = () => {
   const classes = useStyles();
   const history = useHistory();
 
-  // if (isAuth) {
-  //   history.push(Locations.HomePage);
-  // }
-
   const initialValues: InitialValues = {
     username: '',
     email: '',
@@ -31,8 +27,7 @@ export const FormTask = () => {
   };
 
   const submitHandler = (formValues: InitialValues) => {
-    console.log('submitHandler :>> ');
-    // dispatch(authLoginThunk(formValues));
+    dispatch(createNewTaskThunk(formValues));
   };
 
   return (
@@ -73,7 +68,7 @@ export const FormTask = () => {
 
                   <Grid item xs={12}>
                     <FormikTextField
-                      formikkey={fieldName.taskText}
+                      formikkey={fieldName.text}
                       type={fieldType.text}
                       label="Task text"
                       variant="outlined"
@@ -86,6 +81,7 @@ export const FormTask = () => {
                       type={fieldType.number}
                       label="Stats"
                       variant="outlined"
+                      disabled={!isAuth}
                     />
                   </Grid>
 

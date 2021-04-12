@@ -2,8 +2,6 @@ import { TASKS, TasksAction, TasksState } from './tasks.types';
 
 export const tasksState: TasksState = {
   tasks: [],
-  sorting: '',
-  linesPerPage: 3,
 };
 
 export const tasksReducer = (

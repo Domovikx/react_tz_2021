@@ -2,7 +2,7 @@ export enum fieldName {
   email = 'email',
   password = 'password',
   passwordConfirm = 'passwordConfirm',
-  taskText = 'taskText',
+  text = 'text',
   username = 'username',
   status = 'status',
 }
