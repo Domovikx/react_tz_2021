@@ -1,6 +1,7 @@
 import * as React from 'react';
 import ButtonGoBack from '../../components/common/ButtonGoBack';
-import { Container } from '@material-ui/core';
+import FormTask from '../../components/common/FormTask';
+import { Container, Typography } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { useStyles } from './EditTask.styles';
@@ -18,8 +19,13 @@ export const EditTask = () => {
 
   return (
     <Container className={classes.container}>
-      EditTask
       <ButtonGoBack />
+
+      <Typography variant="h6" component="h2">
+        EditTask
+      </Typography>
+
+      <FormTask />
     </Container>
   );
 };
