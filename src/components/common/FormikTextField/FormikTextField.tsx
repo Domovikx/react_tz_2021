@@ -1,8 +1,7 @@
 import React from 'react';
+import { Props } from './FormikTextField.types';
 import { TextField } from '@material-ui/core';
 import { useField } from 'formik';
-
-import { Props } from './FormikTextField.types';
 
 export const FormikTextField = (props: Props) => {
   const { formikkey, type, label } = props;

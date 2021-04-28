@@ -1,8 +1,7 @@
+import { NotifierState } from '../../../store/notifier/notifier.types';
+import { RootState } from '../../../store/store.types';
 import { useSelector } from 'react-redux';
 import { useSnackbar } from 'notistack';
-
-import { RootState } from '../../../store/store.types';
-import { NotifierState } from '../../../store/notifier/notifier.types';
 
 export const Notifier = (): null => {
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
