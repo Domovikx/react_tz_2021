@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-export const taskTextValidation: yup.StringSchema = yup
+export const taskTextRule: yup.StringSchema = yup
   .string()
   .required('Введите текст')
   .matches(

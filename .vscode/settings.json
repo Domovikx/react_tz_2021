@@ -33,6 +33,14 @@
   "eslint.packageManager": "yarn",
   "eslint.quiet": true,
 
+  "typescript.extension.sortImports.pathSortOrder": [
+    "package",
+    "relativeDownLevel",
+    "relativeUpLevel"
+  ],
+  "typescript.extension.sortImports.sortMethod": "path",
+  "typescript.extension.sortImports.sortOnSave": true,
+
   "cSpell.enabledLanguageIds": [
     "javascript",
     "typescript",

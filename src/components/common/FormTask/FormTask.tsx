@@ -10,7 +10,7 @@ import { RootState } from '../../../store/store.types';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { useStyles } from './FormTask.styles';
-import { validationSchema } from '../../../validation/validationSchemes/formTask.validationSchema';
+import { validationSchema } from '../../../validation/schemes/formTask.schema';
 
 export const FormTask = () => {
   const isAuth = useSelector((state: RootState) => state.auth.isAuth);

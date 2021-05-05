@@ -14,7 +14,7 @@ import { RootState } from '../../store/store.types';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { useStyles } from './Authentication.styles';
-import { validationSchema } from '../../validation/validationSchemes/authentication.validationSchema';
+import { validationSchema } from '../../validation/schemes/authentication.schema';
 
 export const Authentication = () => {
   const isAuth = useSelector((state: RootState) => state.auth.isAuth);
